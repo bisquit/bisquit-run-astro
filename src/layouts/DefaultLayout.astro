@@ -1,0 +1,48 @@
+---
+import Footer from '@components/Footer';
+import NavBar from '@components/NavBar';
+import Title from '@components/Title';
+
+const { title = undefined, desc = '' } = Astro.props;
+const defaultTitle = 'bisquit';
+const concatTitle = title ? `${title} - bisquit` : defaultTitle;
+---
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" property="og:description" content={desc} />
+    <meta name="viewport" content="width=device-width" />
+    <title>{concatTitle}</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body class="dark:bg-slate-900 dark:text-white">
+    <div class="container mx-auto px-4 min-h-full flex flex-col">
+      <NavBar />
+      <header class="mt-16">
+        <Title title={title} />
+        {desc && <p>{desc}</p>}
+      </header>
+      <slot />
+      <div class="mt-auto pt-32">
+        <Footer />
+      </div>
+    </div>
+  </body>
+</html>

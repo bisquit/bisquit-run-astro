@@ -1,19 +1,9 @@
 ---
-import MainHead from '../components/MainHead.astro';
-import Footer from '../components/Footer/index.jsx';
-import Nav from '../components/Nav/index.jsx';
+import DefaultLayout from '@layouts/DefaultLayout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<MainHead title="Not Found" />
-	</head>
-	<body>
-		<nav></nav>
-		<div class="wrapper mt4 mb4">
-			<h1>Page Not Found</h1>
-			<p>Not found</p>
-		</div>
-		<footer></footer>
-	</body>
-</html>
+<DefaultLayout title="Not Found">
+  <div class="wrapper mt4 mb4">
+    <h1>Page Not Found</h1>
+  </div>
+</DefaultLayout>

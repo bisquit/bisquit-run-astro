@@ -1,0 +1,27 @@
+---
+import { getLinks, getStoryAsApp } from '../../../utils/storyblok';
+
+export async function getStaticPaths() {
+  const links = await getLinks({ folder: 'apps' });
+  const linkValues = Object.values(links);
+
+  return linkValues.map((link) => {
+    return {
+      params: { slug: link.slug.replace('apps/', '') },
+    };
+  });
+}
+
+const { slug } = Astro.params;
+const slugPrefixed = `apps/${slug}`;
+const storyApp = (await getStoryAsApp(slugPrefixed)).content;
+---
+
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8" />
+</head>
+<body>
+  <h1>{storyApp.name}</h1>
+  <p>{storyApp.description}</p>
+</body>

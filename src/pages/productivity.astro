@@ -1,0 +1,128 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro';
+import AppReview from '@components/AppReview';
+import Subtitle from '@components/Subtitle';
+import Spacing from '@components/Spacing';
+
+type Section = {
+  title: string;
+  entries: Entry[];
+};
+
+type Entry = {
+  title: string;
+  url: string;
+  desc?: string;
+};
+
+const sections: Section[] = [
+  {
+    title: 'Planner Apps',
+    entries: [
+      {
+        title: 'Akiflow',
+        url: 'https://akiflow.com/',
+        desc: 'Planning tasks, with beautiful calendar and todo UI.',
+      },
+      {
+        title: 'Sunsama',
+        url: 'https://sunsama.com/',
+        desc: 'Planning tasks, with beautiful calendar and todo UI.',
+      },
+      {
+        title: 'Plan',
+        url: 'https://getplan.co/',
+        desc: 'Planning tasks, with beautiful calendar and todo UI.',
+      },
+      {
+        title: 'Routine',
+        url: 'https://www.routine.co/',
+        desc: 'Planning tasks, with beautiful calendar and todo UI.',
+      },
+    ],
+  },
+
+  {
+    title: 'Task Focus',
+    entries: [
+      {
+        title: 'Serene',
+        url: 'https://sereneapp.com/',
+        desc: 'Planning tasks, with beautiful calendar and todo UI.',
+      },
+      {
+        title: 'Slash',
+        url: 'https://getslash.co/',
+        desc: 'Planning tasks, with beautiful calendar and todo UI.',
+      },
+    ],
+  },
+
+  {
+    title: 'Time Blocking',
+    entries: [
+      {
+        title: 'Reclaim',
+        url: 'https://reclaim.ai/',
+        desc: 'Planning tasks, with beautiful calendar and todo UI.',
+      },
+      {
+        title: 'SkedPal',
+        url: 'https://skedpal.com/',
+        desc: 'Planning tasks, with beautiful calendar and todo UI.',
+      },
+      {
+        title: 'KosmoTime',
+        url: 'https://www.kosmotime.com/',
+        desc: 'Planning tasks, with beautiful calendar and todo UI.',
+      },
+      {
+        title: 'Planyway',
+        url: 'https://planyway.com/',
+        desc: 'Planning tasks, with beautiful calendar and todo UI.',
+      },
+    ],
+  },
+
+  {
+    title: 'Meeting Reminder',
+    entries: [
+      {
+        title: 'Superpowered',
+        url: 'https://superpowered.me/',
+        desc: 'Planning tasks, with beautiful calendar and todo UI.',
+      },
+      {
+        title: 'MeetingBar',
+        url: 'https://github.com/leits/MeetingBar',
+        desc: 'Planning tasks, with beautiful calendar and todo UI.',
+      },
+    ],
+  },
+];
+---
+
+<DefaultLayout title="Explore productivity">
+  <div class="flex flex-col gap-28">
+    {
+      sections.map((section, index) => {
+        return (
+          <section>
+            <Subtitle>## {section.title}</Subtitle>
+            <div class="flex flex-col gap-8">
+              {section.entries.map((entry) => {
+                return (
+                  <AppReview
+                    title={entry.title}
+                    url={entry.url}
+                    desc={entry.desc}
+                  />
+                );
+              })}
+            </div>
+          </section>
+        );
+      })
+    }
+  </div>
+</DefaultLayout>
