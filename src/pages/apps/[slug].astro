@@ -1,20 +1,28 @@
 ---
-import { getLinks, getStoryAsApp } from '../../../utils/storyblok';
+// import { getLinks, getStoryAsApp } from '../../../utils/storyblok';
 
-export async function getStaticPaths() {
-  const links = await getLinks({ folder: 'apps' });
-  const linkValues = Object.values(links);
-
-  return linkValues.map((link) => {
-    return {
-      params: { slug: link.slug.replace('apps/', '') },
-    };
-  });
+export function getStaticPaths() {
+  return [
+    {
+      params: { slug: 'temp' },
+    },
+  ];
 }
 
-const { slug } = Astro.params;
-const slugPrefixed = `apps/${slug}`;
-const storyApp = (await getStoryAsApp(slugPrefixed)).content;
+// export async function getStaticPaths() {
+//   const links = await getLinks({ folder: 'apps' });
+//   const linkValues = Object.values(links);
+
+//   return linkValues.map((link) => {
+//     return {
+//       params: { slug: link.slug.replace('apps/', '') },
+//     };
+//   });
+// }
+
+// const { slug } = Astro.params;
+// const slugPrefixed = `apps/${slug}`;
+// const storyApp = (await getStoryAsApp(slugPrefixed)).content;
 ---
 
 <!DOCTYPE html>
@@ -22,6 +30,6 @@ const storyApp = (await getStoryAsApp(slugPrefixed)).content;
   <meta charset="utf-8" />
 </head>
 <body>
-  <h1>{storyApp.name}</h1>
-  <p>{storyApp.description}</p>
+  <!-- <h1>{storyApp.name}</h1>
+  <p>{storyApp.description}</p> -->
 </body>
