@@ -1,0 +1,9 @@
+---
+import ThemeToggleButton from './ThemeToggleButton';
+import NavBar from './NavBar';
+---
+
+<header class="py-8 flex justify-between items-center">
+  <NavBar />
+  <ThemeToggleButton client:only="preact" />
+</header>

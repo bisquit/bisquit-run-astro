@@ -12,5 +12,6 @@ module.exports = {
     },
   },
   plugins: [],
-  // darkMode: 'class',
+  darkMode: 'class',
+  safelist: ['dark', 'material-symbols-outlined'],
 };

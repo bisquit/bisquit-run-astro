@@ -20,6 +20,7 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
+      "@stores/*": ["src/stores/*"],
       "@assets/*": ["src/assets/*"]
     },
     // jsx
