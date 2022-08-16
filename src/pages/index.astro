@@ -2,4 +2,22 @@
 import DefaultLayout from '@layouts/DefaultLayout.astro';
 ---
 
-<DefaultLayout title="Hello" />
+<DefaultLayout title="Hello">
+  <div class="flex flex-col gap-4">
+    <p>
+      This is my personal website, where I share tools and productivity apps
+      that I have tried out ever.
+    </p>
+    <p>Feel free to take a look and try yourself!</p>
+    <ul class="flex flex-col gap-1">
+      <li>
+        - <a
+          href="/productivity"
+          class="text-amber-400 hover:text-amber-400/[.7]"
+          >Productivity apps
+        </a>
+      </li>
+      <li>- Tools (I'm drafting..)</li>
+    </ul>
+  </div>
+</DefaultLayout>
