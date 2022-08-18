@@ -5,6 +5,7 @@ import Footer from '@components/Footer';
 import Header from '@components/Header.astro';
 import Title from '@components/Title';
 import ThemePopulator from '@components/ThemePopulator';
+import ClientInitializer from '@components/ClientInitializer';
 import Cookies from 'universal-cookie';
 
 const cookies = new Cookies(Astro.request.headers.get('cookie'));
@@ -28,9 +29,7 @@ const concatTitle = title ? `${title} - bisquit` : defaultTitle;
     <title>{concatTitle}</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   </head>
-  <body
-    class="h-full dark:bg-slate-900 dark:text-white duration-300 leading-relaxed"
-  >
+  <body class="h-full dark:bg-slate-900 dark:text-white leading-relaxed">
     <div class="container mx-auto px-8 min-h-full flex flex-col">
       <Header />
       <header class="mt-16">
@@ -43,5 +42,6 @@ const concatTitle = title ? `${title} - bisquit` : defaultTitle;
       </div>
     </div>
     <ThemePopulator client:only="preact" />
+    <ClientInitializer client:only="preact" />
   </body>
 </html>
