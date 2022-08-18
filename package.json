@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@astrojs/netlify": "^1.0.1",
+    "@fontsource/fira-code": "^4.5.11",
     "@nanostores/preact": "^0.2.1",
     "@storyblok/js": "^1.7.2",
     "clsx": "^1.2.1",

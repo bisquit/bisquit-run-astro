@@ -1,4 +1,6 @@
 ---
+import '@fontsource/fira-code';
+
 import Footer from '@components/Footer';
 import Header from '@components/Header.astro';
 import Title from '@components/Title';
@@ -25,16 +27,6 @@ const concatTitle = title ? `${title} - bisquit` : defaultTitle;
     <meta name="viewport" content="width=device-width" />
     <title>{concatTitle}</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0"
-    />
   </head>
   <body
     class="h-full dark:bg-slate-900 dark:text-white duration-300 leading-relaxed"
